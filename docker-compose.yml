@@ -1,0 +1,107 @@
+version: '3.8'
+
+services:
+  # ==============================================================================
+  # Primary Authentication API Service
+  # ==============================================================================
+  auth-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aas-core-api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_NAME=Auth-as-a-Service
+      - APP_ENV=production
+      - APP_DEBUG=false
+      - DATABASE_URL=postgresql+asyncpg://aas_user:aas_secure_pass_2026@postgres:5432/aas_db
+      - REDIS_URL=redis://redis:6379/0
+      - JWT_SECRET_KEY=production-jwt-signing-secret-key-min-32-chars-long-secure-key-9988
+      - RATE_LIMIT_ENABLED=true
+      - LOCKOUT_MAX_ATTEMPTS=5
+      - LOCKOUT_DURATION_MINUTES=15
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - aas-internal-net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  # ==============================================================================
+  # PostgreSQL Persistence Store
+  # ==============================================================================
+  postgres:
+    image: postgres:16-alpine
+    container_name: aas-postgres-db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=aas_user
+      - POSTGRES_PASSWORD=aas_secure_pass_2026
+      - POSTGRES_DB=aas_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - aas-internal-net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U aas_user -d aas_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # ==============================================================================
+  # Redis High-Throughput Token Blacklist & Sliding Rate Limiter
+  # ==============================================================================
+  redis:
+    image: redis:7-alpine
+    container_name: aas-redis-cache
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes", "--maxmemory", "256mb", "--maxmemory-policy", "volatile-lru"]
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - aas-internal-net
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  # ==============================================================================
+  # Nginx Reverse Proxy with TLS and Rate Limit Header Forwarding
+  # ==============================================================================
+  nginx:
+    image: nginx:alpine
+    container_name: aas-nginx-proxy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      auth-service:
+        condition: service_healthy
+    networks:
+      - aas-internal-net
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+
+networks:
+  aas-internal-net:
+    driver: bridge

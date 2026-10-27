@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  test-runner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aas-test-runner
+    environment:
+      - APP_ENV=test
+      - DATABASE_URL=postgresql+asyncpg://aas_test:test_pass@postgres-test:5432/aas_test_db
+      - REDIS_URL=redis://redis-test:6379/0
+      - JWT_SECRET_KEY=test-jwt-secret-key-32-chars-long-test-purposes
+      - RATE_LIMIT_ENABLED=true
+    command: ["pytest", "--cov=auth_service", "--cov-report=term-missing", "tests/"]
+    depends_on:
+      postgres-test:
+        condition: service_healthy
+      redis-test:
+        condition: service_healthy
+    networks:
+      - aas-test-net
+
+  postgres-test:
+    image: postgres:16-alpine
+    container_name: aas-postgres-test
+    environment:
+      - POSTGRES_USER=aas_test
+      - POSTGRES_PASSWORD=test_pass
+      - POSTGRES_DB=aas_test_db
+    networks:
+      - aas-test-net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U aas_test -d aas_test_db"]
+      interval: 3s
+      timeout: 3s
+      retries: 5
+
+  redis-test:
+    image: redis:7-alpine
+    container_name: aas-redis-test
+    networks:
+      - aas-test-net
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 3s
+      timeout: 3s
+      retries: 5
+
+networks:
+  aas-test-net:
+    driver: bridge
