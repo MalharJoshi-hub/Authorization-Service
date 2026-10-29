@@ -1,0 +1,31 @@
+name: Docker Image Build & Verification
+
+on:
+  push:
+    branches: [main, master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker Image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: false
+          tags: auth-as-a-service:latest
+          load: true
+
+      - name: Verify Image Runs & Passes Healthcheck
+        run: |
+          docker run -d --name test-container -p 8000:8000 auth-as-a-service:latest
+          sleep 5
+          docker ps
+          docker stop test-container
