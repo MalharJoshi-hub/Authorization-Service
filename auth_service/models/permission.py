@@ -26,3 +26,4 @@ class Permission(Base, UUIDPrimaryKeyMixin, ModelSerializerMixin):
 
     def __repr__(self) -> str:
         return f"<Permission name='{self.name}'>"
+

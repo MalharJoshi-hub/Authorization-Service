@@ -26,3 +26,4 @@ class Tenant(Base, UUIDPrimaryKeyMixin, TimestampMixin, ModelSerializerMixin):
 
     def __repr__(self) -> str:
         return f"<Tenant id={self.id} name='{self.name}' slug='{self.slug}'>"
+

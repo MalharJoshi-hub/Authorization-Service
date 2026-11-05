@@ -44,3 +44,4 @@ class TenantInviteRequest(BaseModel):
 
     email: EmailStr = Field(..., example="partner@acme.com")
     role_name: str = Field("member", example="editor")
+

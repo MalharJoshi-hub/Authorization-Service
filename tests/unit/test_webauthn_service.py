@@ -55,3 +55,4 @@ def test_verify_assertion_counter_anti_cloning():
     # Replay or cloned authenticator (counter hasn't progressed)
     assert service.verify_assertion_counter(stored_counter=10, presented_counter=10) is False
     assert service.verify_assertion_counter(stored_counter=10, presented_counter=9) is False
+

@@ -162,3 +162,4 @@ async def get_tenant_by_id(
         is_active=tenant.is_active,
         created_at=tenant.created_at,
     )
+

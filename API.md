@@ -437,3 +437,4 @@ All API errors return a standard JSON object with an HTTP error status code:
 - `GET /metrics`: Standard Prometheus metrics exposition
 - `GET /.well-known/openid-configuration`: OpenID Connect discovery metadata
 - `GET /.well-known/jwks.json`: Public RFC 7517 JSON Web Key Set
+

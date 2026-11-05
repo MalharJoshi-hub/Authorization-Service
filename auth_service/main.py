@@ -7,12 +7,13 @@ and OpenAPI documentation metadata.
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException, Request, status
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, HTMLResponse
 from auth_service.config import settings
 from auth_service.core.exceptions import AaaSException, to_http_exception
 from auth_service.core.logger import logger
 from auth_service.storage.postgres.database import init_db, close_db
 from auth_service.storage.redis.client import close_redis_client
+from auth_service.api.templates.landing import LANDING_PAGE_HTML
 
 # Middleware
 from auth_service.api.middleware.request_id import RequestIdMiddleware
@@ -138,6 +139,22 @@ def create_app() -> FastAPI:
     # Health router accessible at both /health and /api/v1/health
     app.include_router(health_router, prefix="")
     app.include_router(health_router, prefix=api_prefix)
+
+    @app.get("/", include_in_schema=False)
+    async def root(request: Request):
+        accept = request.headers.get("accept", "")
+        if "text/html" in accept or "*/*" in accept:
+            return HTMLResponse(content=LANDING_PAGE_HTML)
+        return {
+            "name": settings.APP_NAME,
+            "version": settings.APP_VERSION,
+            "status": "online",
+            "docs": "/docs",
+            "redoc": "/redoc",
+            "health": "/health",
+            "openid_configuration": "/.well-known/openid-configuration",
+            "jwks": "/.well-known/jwks.json",
+        }
 
     return app
 

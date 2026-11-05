@@ -34,3 +34,4 @@ async def test_api_key_lifecycle(async_client: AsyncClient, admin_headers: dict)
     # 4. Revoke key
     del_resp = await async_client.delete(f"/api/v1/api-keys/{key_id}", headers=admin_headers)
     assert del_resp.status_code == 200
+

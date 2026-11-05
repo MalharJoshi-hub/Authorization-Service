@@ -213,3 +213,4 @@ class MultiAlgorithmHasher:
 
 # Global singleton
 password_hasher = MultiAlgorithmHasher(preferred_algorithm=HashAlgorithm.BCRYPT)
+

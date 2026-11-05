@@ -80,3 +80,4 @@ async def revoke_all_sessions(
 ):
     count = await session_service.terminate_all_except(db, current_user.id)
     return MessageResponse(message=f"Successfully terminated {count} active device sessions.")
+

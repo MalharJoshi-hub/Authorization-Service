@@ -48,3 +48,4 @@ async def test_remote_failure_graceful_fallback():
     # Non-common password with immediate timeout fallback
     res = await checker.check_password("SafeRandomString-99881122")
     assert res == 0
+

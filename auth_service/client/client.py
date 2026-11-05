@@ -135,3 +135,4 @@ class AaaSClient:
         client = await self.get_client()
         resp = await client.get("/health/ready")
         return resp.json()
+

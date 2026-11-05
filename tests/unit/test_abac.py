@@ -34,3 +34,4 @@ def test_abac_evaluate_access_policy():
     # Denied by IP constraint
     with pytest.raises(AuthorizationError):
         abac_evaluator.evaluate_access(user_id, resource, {"client_ip": "10.0.0.99"}, require_ownership=True)
+

@@ -106,3 +106,4 @@ class DatabaseSeeder:
 
 
 seeder = DatabaseSeeder()
+

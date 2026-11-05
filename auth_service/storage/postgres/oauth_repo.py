@@ -81,3 +81,4 @@ class OAuthRepository:
         if res.rowcount == 0:
             raise ResourceNotFoundError(f"OAuth provider '{provider}' not linked to user")
         return True
+

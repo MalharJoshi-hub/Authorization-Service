@@ -77,3 +77,4 @@ def test_generate_secure_password():
         assert len(pwd) >= 16
         valid, _ = validate_password_complexity(pwd)
         assert valid is True
+

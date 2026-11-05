@@ -386,3 +386,4 @@ async def unlink_oauth_provider(
     oauth_repo = OAuthRepository(db)
     await oauth_repo.unlink(current_user.id, provider)
     return MessageResponse(message=f"Successfully unlinked {provider} provider.")
+

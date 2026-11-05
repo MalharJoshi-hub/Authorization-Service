@@ -212,3 +212,4 @@ FastAPI HTTP application exposing all endpoints, middleware pipelines, and admin
 | **Rate Limiting** | Sliding Window (Redis Sorted Sets) | Prevents burst abuse at minute boundaries (unlike fixed window counters) and handles micro-burst attacks effectively. |
 | **Multi-Tenancy** | Shared Database, Tenant Isolation Column | High resource efficiency with strict software-level isolation in all queries and repository methods. |
 | **Audit Logs** | Immutable Append-Only Ledger | Essential for compliance (SOC2, ISO 27001, HIPAA); logs cannot be modified once written. |
+

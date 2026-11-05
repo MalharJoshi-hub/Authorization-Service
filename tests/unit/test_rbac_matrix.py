@@ -147,3 +147,4 @@ def test_abac_composite_policy():
 
     ctx_inactive = ABACContext(user_id="u1", resource_owner_id="u1", is_user_active=False)
     assert engine.evaluate_all(["rule.owner", "rule.active"], ctx_inactive) is False
+

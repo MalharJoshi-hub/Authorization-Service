@@ -84,3 +84,4 @@ async def test_complete_end_to_end_lifecycle(
         json={"refresh_token": new_refresh_token},
     )
     assert revoked_refresh_resp.status_code == 401
+

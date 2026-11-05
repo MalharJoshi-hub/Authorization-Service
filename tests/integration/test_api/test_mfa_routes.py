@@ -41,3 +41,4 @@ async def test_mfa_setup_and_verify_flow(
         "/api/v1/mfa/disable", json={"code": disable_code}, headers=auth_headers
     )
     assert disable_resp.status_code == 200
+

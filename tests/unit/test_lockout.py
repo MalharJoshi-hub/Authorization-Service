@@ -32,3 +32,4 @@ async def test_lockout_records_and_triggers_lock():
     await lockout_manager.unlock_account(identifier)
     is_locked, _ = await lockout_manager.is_locked(identifier)
     assert is_locked is False
+

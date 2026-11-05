@@ -7,3 +7,4 @@ microservices authenticating via AaaS.
 from auth_service.client.client import AaaSClient
 
 __all__ = ["AaaSClient"]
+

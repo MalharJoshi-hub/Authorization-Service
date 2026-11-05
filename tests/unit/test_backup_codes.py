@@ -54,3 +54,4 @@ def test_verify_and_consume_empty_list():
     success, updated = BackupCodesService.verify_and_consume("ABC-123", [])
     assert success is False
     assert updated == []
+

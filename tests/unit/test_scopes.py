@@ -41,3 +41,4 @@ def test_has_all_and_any_scopes():
     assert has_all_scopes(granted, ["read:users", "delete:roles"]) is False
     assert has_any_scope(granted, ["nonexistent:scope", "write:roles"]) is True
     assert has_any_scope(granted, ["foo", "bar"]) is False
+

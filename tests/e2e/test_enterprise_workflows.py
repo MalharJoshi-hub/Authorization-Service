@@ -65,3 +65,4 @@ async def test_complete_enterprise_lifecycle_workflow(async_client: AsyncClient)
     # Step 7: Session Termination (Logout)
     logout_resp = await async_client.post("/api/v1/auth/logout", headers=new_auth_headers)
     assert logout_resp.status_code == 200
+

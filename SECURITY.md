@@ -78,3 +78,4 @@ By default, passwords must satisfy all of the following requirements:
 - **Article 15 (Right to Access):** Automated `/api/v1/compliance/export` compiles all tenant data, session history, and security logs for a requested subject into an encrypted JSON dossier.
 - **Article 17 (Right to Erasure):** `/api/v1/compliance/erase` irreversibly anonymizes email addresses, deletes password hashes, purges active sessions, and marks audit trails with pseudonymized placeholders (`DELETED_USER_<id>`).
 - **Audit Logging Immutability:** Audit entries are append-only; update and delete operations on the `audit_logs` table are strictly forbidden.
+

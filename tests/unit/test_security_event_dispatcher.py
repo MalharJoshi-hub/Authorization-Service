@@ -80,3 +80,4 @@ async def test_history_buffer():
 
     dispatcher.clear_history()
     assert len(dispatcher.get_history()) == 0
+

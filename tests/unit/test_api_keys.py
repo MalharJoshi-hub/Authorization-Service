@@ -38,3 +38,4 @@ def test_mask_api_key():
     assert "••••••••" in masked
     assert masked[-4:] == full_key[-4:]
     assert mask_api_key("short") == "••••••••"
+

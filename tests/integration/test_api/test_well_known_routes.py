@@ -26,3 +26,4 @@ async def test_get_openid_configuration(async_client: AsyncClient):
     assert "authorization_endpoint" in data
     assert "token_endpoint" in data
     assert "jwks_uri" in data
+

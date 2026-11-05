@@ -105,3 +105,4 @@ def test_metrics_registry_export():
     registry.reset_all()
     text_after = registry.export_prometheus()
     assert "auth_logins_total 0" in text_after or "auth_logins_total" in text_after
+

@@ -64,3 +64,4 @@ class ForgetMeResponse(BaseModel):
     message: str = Field(..., example="User data pseudonymized")
     pseudonymized_id: str
     erased_at: str
+

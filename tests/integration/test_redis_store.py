@@ -71,3 +71,4 @@ async def test_password_reset_token_lifecycle():
 
     # Second consume fails
     assert await redis_token_store.consume_password_reset_token(token) is None
+

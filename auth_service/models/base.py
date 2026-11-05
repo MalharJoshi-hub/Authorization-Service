@@ -56,3 +56,4 @@ class ModelSerializerMixin:
             else:
                 result[col.name] = val
         return result
+

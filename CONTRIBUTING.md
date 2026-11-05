@@ -115,3 +115,4 @@ Before submitting a Pull Request, verify:
 - [ ] Documentation updated in `API.md` if endpoints are modified or added.
 - [ ] Git commit history is clean, rebased against `master`, with descriptive commit messages.
 - [ ] Linked relevant GitHub issue in the PR description (e.g., `Resolves #14`).
+

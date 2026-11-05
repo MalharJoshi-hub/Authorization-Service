@@ -47,3 +47,4 @@ class APIKey(Base, UUIDPrimaryKeyMixin, ModelSerializerMixin):
 
     def __repr__(self) -> str:
         return f"<APIKey id={self.id} prefix='{self.prefix}' tenant_id='{self.tenant_id}'>"
+

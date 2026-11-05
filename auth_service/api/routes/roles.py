@@ -200,3 +200,4 @@ async def get_user_roles(
     if not user:
         raise ResourceNotFoundError(f"User '{user_id}' not found")
     return [serialize_role(r) for r in user.roles]
+

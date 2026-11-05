@@ -88,3 +88,4 @@ ALL_SYSTEM_PERMISSIONS: List[PermissionDef] = [
     PermissionDef(SystemPermissions.ADMIN_ALL, "admin", "*", "Unrestricted administrative privilege across tenant"),
     PermissionDef(SystemPermissions.ALL, "*", "*", "Global superuser privilege across all platform boundaries"),
 ]
+

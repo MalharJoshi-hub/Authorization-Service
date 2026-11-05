@@ -58,3 +58,4 @@ async def test_cmd_create_api_key_mock():
 
         await cmd_create_api_key(mock_args)
         assert mock_k_repo.return_value.create.called
+

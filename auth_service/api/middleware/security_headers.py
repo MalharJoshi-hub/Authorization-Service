@@ -20,7 +20,19 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
         response.headers["X-Frame-Options"] = "DENY"
         response.headers["X-XSS-Protection"] = "1; mode=block"
         response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
-        response.headers["Content-Security-Policy"] = "default-src 'self'; frame-ancestors 'none';"
+
+        # Permit CDN assets and inline scripts on documentation and landing routes
+        if request.url.path in ("/docs", "/redoc", "/openapi.json", "/"):
+            response.headers["Content-Security-Policy"] = (
+                "default-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; "
+                "script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; "
+                "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; "
+                "img-src 'self' data: https://cdn.jsdelivr.net https://fastapi.tiangolo.com; "
+                "font-src 'self' https://cdn.jsdelivr.net data:;"
+            )
+        else:
+            response.headers["Content-Security-Policy"] = "default-src 'self'; frame-ancestors 'none';"
+
         response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains; preload"
 
         # Inject Rate Limiting Headers if tracked in request state
@@ -32,3 +44,4 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
             response.headers["X-RateLimit-Reset"] = str(request.state.rate_limit_reset)
 
         return response
+

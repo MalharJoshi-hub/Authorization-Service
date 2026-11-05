@@ -38,3 +38,4 @@ class UserMFA(Base, UUIDPrimaryKeyMixin, TimestampMixin, ModelSerializerMixin):
 
     def __repr__(self) -> str:
         return f"<UserMFA user_id='{self.user_id}' enabled={self.is_enabled}>"
+

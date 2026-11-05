@@ -28,3 +28,4 @@ def test_run_audit_structure():
     assert isinstance(report["findings"], list)
     assert 0 <= report["security_score"] <= 100
     assert report["rating"] in ["EXCELLENT", "GOOD", "FAIR", "POOR"]
+

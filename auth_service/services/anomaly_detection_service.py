@@ -174,3 +174,4 @@ class AnomalyDetectionService:
 
 # Global singleton
 anomaly_detector = AnomalyDetectionService()
+

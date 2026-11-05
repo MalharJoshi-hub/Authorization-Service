@@ -69,3 +69,4 @@ class AaaSMiddlewareHandler:
             return claims
 
         return dependency
+

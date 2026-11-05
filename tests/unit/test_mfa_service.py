@@ -37,3 +37,4 @@ def test_generate_and_consume_backup_codes():
     matched_second, remaining_second = mfa_service.verify_and_consume_backup_code(first_code, remaining)
     assert matched_second is False
     assert len(remaining_second) == 4
+

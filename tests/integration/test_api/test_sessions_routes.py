@@ -17,3 +17,4 @@ async def test_session_management_flow(
     # Revoke all
     revoke_resp = await async_client.delete("/api/v1/sessions", headers=auth_headers)
     assert revoke_resp.status_code == 200
+

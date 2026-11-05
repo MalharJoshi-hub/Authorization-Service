@@ -128,3 +128,4 @@ class CSRFProtector:
 
 # Global singleton
 csrf_protector = CSRFProtector()
+

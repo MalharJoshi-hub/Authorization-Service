@@ -65,3 +65,4 @@ class AssignPermissionsRequest(BaseModel):
     """Payload for binding a list of permissions to a role."""
 
     permission_names: List[str] = Field(..., min_items=1, example=["users:read", "users:update"])
+

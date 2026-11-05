@@ -32,3 +32,4 @@ async def erase_my_account(
     """Execute GDPR Right to be Forgotten request, pseudonymizing all user data."""
     service = ComplianceService(db)
     return await service.erase_user_data(current_user, reason="User self-service GDPR erasure")
+

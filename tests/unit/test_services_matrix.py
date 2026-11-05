@@ -100,3 +100,4 @@ async def test_session_service_device_management(db_session, test_tenant, test_u
     # Revoke session
     revoked = await service.revoke_session(sess.id, test_user.id)
     assert revoked is True
+

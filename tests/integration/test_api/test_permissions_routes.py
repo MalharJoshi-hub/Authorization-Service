@@ -27,3 +27,4 @@ async def test_create_permission(async_client: AsyncClient, admin_headers: dict)
     assert response.status_code == 201
     data = response.json()
     assert data["name"] == "invoices:generate"
+

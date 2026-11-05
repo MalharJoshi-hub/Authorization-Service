@@ -34,3 +34,4 @@ async def test_audit_log_query_endpoint(async_client: AsyncClient, admin_headers
     assert resp.status_code == 200
     data = resp.json()
     assert isinstance(data, (list, dict))
+

@@ -205,3 +205,4 @@ class AsyncAuthClient:
     async def get_health(self) -> Dict[str, Any]:
         """Query service liveness and readiness probe."""
         return await self._request("GET", "/health")
+

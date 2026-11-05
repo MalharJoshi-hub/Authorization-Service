@@ -42,3 +42,4 @@ async def test_token_introspection_active_token(
     )
     assert introspect_again.status_code == 200
     assert introspect_again.json()["active"] is False
+

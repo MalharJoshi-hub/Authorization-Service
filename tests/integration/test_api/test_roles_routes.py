@@ -54,3 +54,4 @@ async def test_member_cannot_create_roles_forbidden(
     payload = {"name": "unauthorized_role"}
     response = await async_client.post("/api/v1/roles", json=payload, headers=auth_headers)
     assert response.status_code == 403
+

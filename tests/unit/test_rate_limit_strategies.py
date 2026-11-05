@@ -34,3 +34,4 @@ def test_fixed_window_limiter():
     assert limiter.allow(key) is False
     # Different key is permitted
     assert limiter.allow("client-beta") is True
+

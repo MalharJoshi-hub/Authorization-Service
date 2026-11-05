@@ -53,3 +53,4 @@ def test_verify_challenge_plain():
 def test_verify_challenge_invalid_method():
     with pytest.raises(PKCEError):
         PKCEHandler.verify_challenge("verifier", "challenge", method="unsupported_method")
+

@@ -12,7 +12,7 @@ services:
       - REDIS_URL=redis://redis-test:6379/0
       - JWT_SECRET_KEY=test-jwt-secret-key-32-chars-long-test-purposes
       - RATE_LIMIT_ENABLED=true
-    command: ["pytest", "--cov=auth_service", "--cov-report=term-missing", "tests/"]
+    command: [ "pytest", "--cov=auth_service", "--cov-report=term-missing", "tests/" ]
     depends_on:
       postgres-test:
         condition: service_healthy
@@ -31,7 +31,7 @@ services:
     networks:
       - aas-test-net
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U aas_test -d aas_test_db"]
+      test: [ "CMD-SHELL", "pg_isready -U aas_test -d aas_test_db" ]
       interval: 3s
       timeout: 3s
       retries: 5
@@ -42,7 +42,7 @@ services:
     networks:
       - aas-test-net
     healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
+      test: [ "CMD", "redis-cli", "ping" ]
       interval: 3s
       timeout: 3s
       retries: 5

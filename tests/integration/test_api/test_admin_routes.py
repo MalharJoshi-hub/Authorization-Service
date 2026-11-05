@@ -65,3 +65,4 @@ async def test_admin_analytics_endpoints(async_client: AsyncClient, admin_header
     )
     assert events_resp.status_code == 200
     assert isinstance(events_resp.json(), list)
+

@@ -92,3 +92,4 @@ def test_assess_login_event_benign():
 
     assert report.is_suspicious is False
     assert report.risk_score == 0
+

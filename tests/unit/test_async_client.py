@@ -43,3 +43,4 @@ async def test_async_client_refresh_missing_token():
     client = AsyncAuthClient()
     with pytest.raises(AsyncAuthClientError):
         await client.refresh()
+

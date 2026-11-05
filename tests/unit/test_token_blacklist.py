@@ -22,3 +22,4 @@ async def test_blacklist_empty_or_expired_jti():
     assert await token_blacklist.is_blacklisted("") is False
     # Negative TTL is effectively expired
     assert await token_blacklist.blacklist_token("jti-zero-ttl", ttl_seconds=0) is True
+

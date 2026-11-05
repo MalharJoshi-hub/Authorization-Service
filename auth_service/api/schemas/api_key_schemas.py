@@ -45,3 +45,4 @@ class APIKeyResponse(BaseModel):
 
     class Config:
         from_attributes = True
+

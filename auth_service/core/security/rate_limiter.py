@@ -119,3 +119,4 @@ async def check_rate_limit(
             message=f"Too many requests for {endpoint_tag}. Limit: {limit}/{window_seconds}s. Try again in {reset_time}s.",
             retry_after=reset_time,
         )
+

@@ -100,3 +100,4 @@ def test_get_token_jti():
     extracted_jti = get_token_jti(token)
     assert extracted_jti == claims["jti"]
     assert get_token_jti("invalid-token") is None
+

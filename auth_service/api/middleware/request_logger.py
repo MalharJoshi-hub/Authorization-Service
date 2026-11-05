@@ -38,3 +38,4 @@ class RequestLoggerMiddleware(BaseHTTPMiddleware):
                 f"{method} {path} - FAILED ({duration_ms:.2f}ms) [{ip}]: {str(e)}"
             )
             raise
+

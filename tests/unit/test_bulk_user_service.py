@@ -70,3 +70,4 @@ async def test_import_users_commit_and_collision(db_session):
     res2 = await service.import_users(users_data, tenant_id="tenant-2", dry_run=False)
     assert res2.created_count == 0
     assert res2.skipped_count == 1
+

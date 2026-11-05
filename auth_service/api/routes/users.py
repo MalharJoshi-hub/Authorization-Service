@@ -211,3 +211,4 @@ async def get_user_by_id(
         created_at=user.created_at,
         last_login_at=user.last_login_at,
     )
+

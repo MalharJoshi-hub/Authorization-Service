@@ -105,3 +105,4 @@ volumes:
 networks:
   aas-internal-net:
     driver: bridge
+

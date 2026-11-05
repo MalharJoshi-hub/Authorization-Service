@@ -57,3 +57,4 @@ async def revoke_token(
         token_type_hint=payload.token_type_hint,
     )
     return MessageResponse(message="Token successfully revoked.")
+

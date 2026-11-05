@@ -131,3 +131,4 @@ class PwnedPasswordChecker:
 
 # Global singleton
 pwned_checker = PwnedPasswordChecker()
+

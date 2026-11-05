@@ -65,3 +65,4 @@ class WebhookRepository:
         if res.rowcount == 0:
             raise ResourceNotFoundError(f"Webhook '{endpoint_id}' not found")
         return True
+

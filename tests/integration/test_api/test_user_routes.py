@@ -59,3 +59,4 @@ async def test_change_password_flow(
 async def test_unauthenticated_request_rejected(async_client: AsyncClient):
     response = await async_client.get("/api/v1/users/me")
     assert response.status_code == 401
+

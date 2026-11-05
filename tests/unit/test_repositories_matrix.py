@@ -160,3 +160,4 @@ async def test_session_repo_lifecycle(db_session, test_tenant, test_user):
     await repo.deactivate(sess.id)
     refreshed = await repo.get_by_id(sess.id)
     assert refreshed.is_active is False
+

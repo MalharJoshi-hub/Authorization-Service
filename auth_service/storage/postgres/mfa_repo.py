@@ -61,3 +61,4 @@ class MFARepository:
             profile.backup_codes = []
             await self.session.flush()
         return True
+

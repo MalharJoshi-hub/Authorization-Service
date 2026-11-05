@@ -26,3 +26,4 @@ def test_password_history_prevent_reuse():
     assert password_policy_service.check_password_history(historical_plain, [h1, h2]) is True
     # Candidate is fresh -> allowed
     assert password_policy_service.check_password_history("BrandNewPassword2026!@", [h1, h2]) is False
+

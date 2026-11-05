@@ -51,3 +51,4 @@ class AnalyticsEventCount(BaseModel):
 
     event_type: str
     count: int
+

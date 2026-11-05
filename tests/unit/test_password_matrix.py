@@ -93,3 +93,4 @@ def test_bcrypt_salt_uniqueness():
     assert h1 != h2
     assert verify_password(pwd, h1) is True
     assert verify_password(pwd, h2) is True
+

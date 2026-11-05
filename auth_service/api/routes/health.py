@@ -88,3 +88,4 @@ async def metrics() -> Dict[str, Any]:
         "multi_tenancy": settings.MULTI_TENANCY_ENABLED,
         "rate_limiting": settings.RATE_LIMIT_ENABLED,
     }
+

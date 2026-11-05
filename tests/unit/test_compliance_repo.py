@@ -26,3 +26,4 @@ async def test_purge_sessions_and_tokens(db_session):
 
     purged_tokens = await repo.purge_revoked_tokens(older_than_days=14)
     assert purged_tokens >= 0
+

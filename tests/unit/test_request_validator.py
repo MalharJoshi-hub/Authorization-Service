@@ -24,3 +24,4 @@ def test_sanitize_dict_recursive():
     assert "&lt;b&gt;" in sanitized["nested"]["comment"]
     assert "&lt;i&gt;" in sanitized["tags"][0]
     assert sanitized["tags"][1] == 123
+

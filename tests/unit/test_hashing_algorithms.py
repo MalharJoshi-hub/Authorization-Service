@@ -62,3 +62,4 @@ def test_identify_unknown_algorithm():
     hasher = MultiAlgorithmHasher()
     assert hasher.identify_algorithm("plain_text_md5_hash") == "unknown"
     assert hasher.verify("pwd", "unknown_format") is False
+

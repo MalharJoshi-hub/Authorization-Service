@@ -45,3 +45,4 @@ def test_parse_header_cert_invalid_base64():
     header_val = "CN=test;-----BEGIN CERTIFICATE-----\nInvalid!Base64@Bytes\n-----END CERTIFICATE-----"
     with pytest.raises(MTLSError):
         MTLSHandler.parse_header_cert(header_val)
+

@@ -95,3 +95,4 @@ class LogoutRequest(BaseModel):
     """Payload for terminal session revocation."""
 
     refresh_token: Optional[str] = Field(None, description="Optional refresh token to invalidate")
+

@@ -174,3 +174,4 @@ async def get_api_key_auth(
 
     await repo.update_last_used(api_key.id)
     return api_key
+

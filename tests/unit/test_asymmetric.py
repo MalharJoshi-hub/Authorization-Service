@@ -27,3 +27,4 @@ def test_generate_ecdsa_and_ed25519():
     ed_priv, ed_pub = asymmetric_crypto.generate_ed25519_keypair()
     assert "-----BEGIN PRIVATE KEY-----" in ed_priv
     assert "-----BEGIN PUBLIC KEY-----" in ed_pub
+

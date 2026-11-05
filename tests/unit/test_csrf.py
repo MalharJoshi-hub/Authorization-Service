@@ -67,3 +67,4 @@ def test_csrf_missing_tokens_fail():
 
     with pytest.raises(CSRFError):
         protector.verify_token("")
+

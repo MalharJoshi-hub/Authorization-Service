@@ -34,3 +34,4 @@ jobs:
       - name: Run Mypy Type Checker
         run: |
           mypy auth_service/ --ignore-missing-imports
+

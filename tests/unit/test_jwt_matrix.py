@@ -267,3 +267,4 @@ def test_jwt_unicode_email_and_name_claims():
     assert decoded["email"] == "müller@deutschland.de"
     assert decoded["display_name"] == "François René 🚀"
     assert decoded["bio"] == "日本語テスト"
+

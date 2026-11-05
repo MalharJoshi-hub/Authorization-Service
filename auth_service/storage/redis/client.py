@@ -166,3 +166,4 @@ async def close_redis_client() -> None:
     if _in_memory_instance is not None:
         await _in_memory_instance.close()
         _in_memory_instance = None
+

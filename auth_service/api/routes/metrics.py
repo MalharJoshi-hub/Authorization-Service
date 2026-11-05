@@ -14,3 +14,4 @@ async def get_prometheus_metrics() -> Response:
     """Expose application metrics in standard Prometheus exposition text format."""
     metrics_text = telemetry.export_prometheus()
     return Response(content=metrics_text, media_type="text/plain; version=0.0.4; charset=utf-8")
+

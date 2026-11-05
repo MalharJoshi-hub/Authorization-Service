@@ -34,3 +34,4 @@ async def test_tenant_crud_flow(async_client: AsyncClient, admin_headers: dict):
         headers=admin_headers,
     )
     assert invite_resp.status_code == 200
+

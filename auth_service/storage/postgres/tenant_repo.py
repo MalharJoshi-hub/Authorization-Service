@@ -83,3 +83,4 @@ class TenantRepository:
 
         await self.session.flush()
         return tenant
+

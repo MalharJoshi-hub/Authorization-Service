@@ -44,3 +44,4 @@ async def test_detect_refresh_token_reuse_and_terminate_family(
         json={"refresh_token": refresh_token_2},
     )
     assert legit_attempt_resp.status_code == 401
+

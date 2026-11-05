@@ -22,3 +22,4 @@ def test_sanitize_client_ip():
     assert ip_intelligence.sanitize_client_ip("203.0.113.195, 10.0.0.1") == "203.0.113.195"
     assert ip_intelligence.sanitize_client_ip("invalid_ip, 1.1.1.1") == "1.1.1.1"
     assert ip_intelligence.sanitize_client_ip("") == "127.0.0.1"
+

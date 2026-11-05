@@ -82,3 +82,4 @@ class TokenRepository:
         )
         await self.session.flush()
         return res.rowcount
+

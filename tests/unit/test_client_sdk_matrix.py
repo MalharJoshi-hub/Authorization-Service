@@ -83,3 +83,4 @@ async def test_aaas_middleware_handler_inactive_token():
         with pytest.raises(HTTPException) as exc_info:
             await handler.get_current_user_claims(credentials=mock_credentials)
         assert exc_info.value.status_code == 401
+

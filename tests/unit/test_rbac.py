@@ -48,3 +48,4 @@ def test_rbac_has_role_direct_and_hierarchy():
     # viewer inherits nothing higher
     assert has_role(["viewer"], "admin") is False
     assert has_role(["viewer"], "member") is False
+

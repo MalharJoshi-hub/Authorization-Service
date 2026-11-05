@@ -289,3 +289,4 @@ class MetricsRegistry:
 
 # Global telemetry singleton
 telemetry = MetricsRegistry()
+

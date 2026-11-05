@@ -67,3 +67,4 @@ def test_session_service_fingerprinting():
     assert "Android" in session_service.parse_device_name("Android 14")
     assert "macOS" in session_service.parse_device_name("Macintosh; Intel Mac OS X")
     assert "Windows" in session_service.parse_device_name("Windows NT 10.0")
+

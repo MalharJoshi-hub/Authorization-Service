@@ -154,3 +154,4 @@ async def disable_mfa(
     mfa_profile.is_enabled = False
     await db.flush()
     return MessageResponse(message="MFA has been successfully disabled.")
+

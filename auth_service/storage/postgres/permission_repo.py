@@ -65,3 +65,4 @@ class PermissionRepository:
             select(Permission).order_by(Permission.resource.asc(), Permission.action.asc())
         )
         return list(res.scalars().all())
+

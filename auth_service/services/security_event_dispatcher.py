@@ -120,3 +120,4 @@ class SecurityEventDispatcher:
 
 # Global singleton
 security_event_dispatcher = SecurityEventDispatcher()
+

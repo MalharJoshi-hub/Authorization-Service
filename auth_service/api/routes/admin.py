@@ -309,3 +309,4 @@ async def analytics_events(
     audit_repo = AuditLogRepository(db)
     counts = await audit_repo.get_event_counts_by_type(tenant_id=tenant_id, days=days)
     return [AnalyticsEventCount(**c) for c in counts]
+

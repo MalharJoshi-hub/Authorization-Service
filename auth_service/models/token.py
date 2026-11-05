@@ -28,3 +28,4 @@ class RefreshToken(Base, UUIDPrimaryKeyMixin, ModelSerializerMixin):
 
     def __repr__(self) -> str:
         return f"<RefreshToken id={self.id} user_id='{self.user_id}' family_id='{self.family_id}'>"
+

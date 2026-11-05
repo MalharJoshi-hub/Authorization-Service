@@ -32,3 +32,4 @@ async def test_webhook_crud_and_ping(async_client: AsyncClient, admin_headers: d
     # 4. Delete webhook
     del_resp = await async_client.delete(f"/api/v1/webhooks/{webhook_id}", headers=admin_headers)
     assert del_resp.status_code == 200
+

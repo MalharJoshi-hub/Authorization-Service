@@ -173,3 +173,4 @@ class WebAuthnService:
 
 # Global singleton
 webauthn_service = WebAuthnService()
+

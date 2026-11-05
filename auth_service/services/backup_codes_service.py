@@ -86,3 +86,4 @@ class BackupCodesService:
 
 # Global singleton
 backup_codes_service = BackupCodesService()
+

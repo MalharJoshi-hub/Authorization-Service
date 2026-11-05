@@ -256,3 +256,4 @@ A complete API inventory detailing all 53 endpoints across 12 resource groups is
 - **Security Disclosures:** Review [SECURITY.md](SECURITY.md) for vulnerability reporting guidelines and threat model details.
 - **Contributing:** See [CONTRIBUTING.md](CONTRIBUTING.md) for code style and PR merge workflows.
 - **License:** MIT License.
+

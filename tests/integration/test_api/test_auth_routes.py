@@ -124,3 +124,4 @@ async def test_logout_revokes_token(
         headers={"Authorization": f"Bearer {access_token}"},
     )
     assert protected_resp.status_code == 401
+

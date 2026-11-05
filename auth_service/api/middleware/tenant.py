@@ -34,3 +34,4 @@ class TenantResolutionMiddleware(BaseHTTPMiddleware):
             return await call_next(request)
         finally:
             tenant_id_ctx.reset(token)
+

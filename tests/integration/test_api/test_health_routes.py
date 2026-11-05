@@ -29,3 +29,4 @@ async def test_metrics_probe(async_client: AsyncClient):
     data = response.json()
     assert "uptime_seconds" in data
     assert "python_version" in data
+

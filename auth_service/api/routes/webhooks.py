@@ -130,3 +130,4 @@ async def ping_webhook(
         db, tenant_id, "ping", {"message": "Test ping event from Auth-as-a-Service"}
     )
     return MessageResponse(message=f"Dispatched test ping to {count} matching endpoints.")
+

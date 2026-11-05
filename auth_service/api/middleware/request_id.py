@@ -30,3 +30,4 @@ class RequestIdMiddleware(BaseHTTPMiddleware):
             return response
         finally:
             request_id_ctx.reset(token)
+

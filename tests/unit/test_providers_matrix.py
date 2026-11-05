@@ -89,3 +89,4 @@ def test_saml_provider_initialization_and_metadata():
     assert provider.entity_id == "https://idp.okta.com/exk123456"
     assert provider.sso_url == "https://idp.okta.com/sso"
     assert "MockCert" in provider.certificate_pem
+

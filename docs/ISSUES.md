@@ -171,3 +171,4 @@ This document records the 28 engineering issues tracked, implemented, tested, an
 - **Milestone:** v1.0.0
 - **Branch:** `docs/full-suite`
 - **Description:** Produce complete technical documentation including `ARCHITECTURE.md`, `PRD.md`, `API.md`, `SECURITY.md`, and `README.md`.
+

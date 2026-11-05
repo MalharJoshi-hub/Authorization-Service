@@ -51,3 +51,4 @@ def mask_api_key(raw_or_prefixed: str) -> str:
     prefix = raw_or_prefixed[:9]
     tail = raw_or_prefixed[-4:]
     return f"{prefix}••••••••{tail}"
+

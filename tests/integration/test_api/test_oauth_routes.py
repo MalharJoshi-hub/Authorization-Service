@@ -48,3 +48,4 @@ async def test_github_callback_mock_flow(async_client: AsyncClient):
     assert response.status_code == 200
     data = response.json()
     assert "access_token" in data
+

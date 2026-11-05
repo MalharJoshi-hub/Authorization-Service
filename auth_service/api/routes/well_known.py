@@ -28,3 +28,4 @@ async def get_jwks() -> Dict[str, Any]:
 async def get_openid_configuration(request: Request) -> Dict[str, Any]:
     base_url = str(request.base_url).rstrip("/")
     return jwks_manager.get_openid_configuration(base_url)
+

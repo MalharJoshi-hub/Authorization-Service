@@ -84,3 +84,4 @@ def test_calculate_risk_delta_first_device():
     risk, reasons = service.calculate_risk_delta(fp, [], [])
     assert risk == 0
     assert any("Initial device" in r for r in reasons)
+

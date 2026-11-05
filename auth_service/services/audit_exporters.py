@@ -50,3 +50,4 @@ class JSONLinesExporter:
 
 syslog_exporter = SyslogRFC5424Exporter()
 jsonl_exporter = JSONLinesExporter()
+

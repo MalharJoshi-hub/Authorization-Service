@@ -43,3 +43,4 @@ class OAuthAccount(Base, UUIDPrimaryKeyMixin, TimestampMixin, ModelSerializerMix
 
     def __repr__(self) -> str:
         return f"<OAuthAccount provider='{self.provider}' provider_user_id='{self.provider_user_id}'>"
+

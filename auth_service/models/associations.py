@@ -19,3 +19,4 @@ role_permissions = Table(
     Column("role_id", String(36), ForeignKey("roles.id", ondelete="CASCADE"), primary_key=True),
     Column("permission_id", String(36), ForeignKey("permissions.id", ondelete="CASCADE"), primary_key=True),
 )
+

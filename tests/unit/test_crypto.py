@@ -26,3 +26,4 @@ def test_decrypt_tampered_fails():
     tampered = ciphertext[:-4] + "AAAA"
     with pytest.raises(ValidationError):
         field_encryptor.decrypt(tampered)
+

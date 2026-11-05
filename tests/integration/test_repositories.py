@@ -207,3 +207,4 @@ async def test_oauth_repository(db_session: AsyncSession, test_tenant: Tenant):
     # Unlink
     unlinked = await oauth_repo.unlink(user.id, "github")
     assert unlinked is True
+

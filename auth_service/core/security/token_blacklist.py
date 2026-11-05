@@ -66,3 +66,4 @@ class TokenBlacklist:
 
 
 token_blacklist = TokenBlacklist()
+

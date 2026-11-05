@@ -59,3 +59,4 @@ def test_token_exchange_privilege_escalation_prevented():
             subject_token_type=service.TOKEN_TYPE_ACCESS_TOKEN,
             scope="read:data admin:all",
         )
+
